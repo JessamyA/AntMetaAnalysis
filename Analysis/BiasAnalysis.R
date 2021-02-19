@@ -3,6 +3,7 @@ setwd("C:/Users/jessa/Documents/AntMetaAnalysis")
 
 #Load in Packages
 library(dplyr)
+library(plyr)
 library(ggplot2)
 library(tidyverse)
 
@@ -106,6 +107,38 @@ ggplot(data = TotalSpeciesDataV3, aes(x = "", y = ExtantSpecies, fill = Subfamil
                                "#6b6eff",
                                "#cc6bff")) +
   blank_theme
+
+#Statistical Analysis for Subfamily
+#Merging Counts into the same dataframe
+SubfamStats <- TotalSpeciesDataV3[,c("Subfamily", "ExtantSpecies")]
+str(SpeciesData$Subfamily)
+SpeciesData$Subfamily <- as.factor(SpeciesData$Subfamily)
+str(SpeciesData$Subfamily)
+levels(SpeciesData$Subfamily)
+MetaSubfam <- count(SpeciesData, "Subfamily")
+ComboSubfam <- merge(SubfamStats, MetaSubfam, by = "Subfamily")
+ComboSubfam <- rbind(ComboSubfam, c("Other", 623, 0))
+colnames(ComboSubfam)[colnames(ComboSubfam) %in% c("ExtantSpecies", "freq")] <- c("Expected", "Observed")
+str(ComboSubfam)
+ComboSubfam$Subfamily <- as.factor(ComboSubfam$Subfamily)
+ComboSubfam$Expected <- as.numeric(ComboSubfam$Expected)
+ComboSubfam$Observed <- as.numeric(ComboSubfam$Observed)
+str(ComboSubfam)
+
+#Transform to percentages for comparison
+ES <- sum(ComboSubfam$Expected)
+ComboSubfam["Expected"] = ComboSubfam["Expected"]/ES
+ComboSubfam["Expected"] = ComboSubfam["Expected"]*100
+sum(ComboSubfam$Expected)
+
+OS <- sum(ComboSubfam$Observed)
+ComboSubfam["Observed"] = ComboSubfam["Observed"]/OS
+ComboSubfam["Observed"] = ComboSubfam["Observed"]*100
+sum(ComboSubfam$Observed)
+
+#Stat test
+chisq <- chisq.test()
+
 
 ############################################################################################## Lab vs. Field
 
