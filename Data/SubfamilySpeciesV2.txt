@@ -1,0 +1,9 @@
+Subfamily	ExtantGenera	ExtantSpecies
+Amblyoponinae	9	144
+Dolichoderinae	28	841
+Dorylinae	27	822
+Ectatomminae	4	270
+Formicinae	51	4053
+Myrmicinae	148	7672
+Ponerinae	47	1393
+Not Identified in Meta-Analysis	25	623
