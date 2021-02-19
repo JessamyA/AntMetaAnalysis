@@ -29,6 +29,7 @@ ggplot(data = SpeciesData, aes(x = factor(1), fill = Subfamily)) +
   
 #Piechart for Lab vs. Field studies
 ggplot(data = Raw, aes(x = factor(1), fill = LorF)) +
-  geom_bar() +
+  geom_bar(color = "black") +
   coord_polar("y", start = 0) +
+  scale_fill_manual(values = c("Light Green", "Light Blue")) +
   blank_theme
