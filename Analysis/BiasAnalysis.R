@@ -136,17 +136,65 @@ ComboSubfam["Observed"] = ComboSubfam["Observed"]/OS
 ComboSubfam["Observed"] = ComboSubfam["Observed"]*100
 sum(ComboSubfam$Observed)
 
-#Stat test
-chisq <- chisq.test()
+ComboSubfam <- ComboSubfam %>% mutate_at(vars(Observed, Expected), funs(round(., 7)))
+sum(ComboSubfam$Expected)
+sum(ComboSubfam$Observed)
 
+#OR multiply Observed up to same value
+ComboSubfam["Observed"] = ComboSubfam["Observed"]*(ES/OS)
+sum(ComboSubfam$Observed)
+ComboSubfam <- ComboSubfam %>% mutate_at(vars(Observed, Expected), funs(round(., 0)))
+sum(ComboSubfam$Expected)
+sum(ComboSubfam$Observed)
+
+#Stat test - Chi-squared
+Chidata <- ComboSubfam[,!(colnames(ComboSubfam) %in% "Expected")]
+ExRatio <- (ComboSubfam$Expected)/ES
+Chi <- chisq.test(Chidata, p = ExRatio)
 
 ############################################################################################## Lab vs. Field
+
+#Counts
+str(Raw$LorF)
+Raw$LorF <- as.factor(Raw$LorF)
+str(Raw$LorF)
+levels(Raw$LorF)
+LabField <- count(Raw, "LorF")
+sum(LabField$freq)
 
 #Piechart for Lab vs. Field studies
 ggplot(data = Raw, aes(x = factor(1), fill = LorF)) +
   geom_bar(color = "black") +
-  geom_text(aes(y = value/3 + c(0, cumsum(value)[-length(value)]), 
-                label = percent(value/100)), size=5) +
   coord_polar("y", start = 0) +
   scale_fill_manual(values = c("Light Green", "Light Blue")) +
   blank_theme
+
+############################################################################################## Map
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
