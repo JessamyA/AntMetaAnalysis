@@ -9,6 +9,7 @@ library(tidyverse)
 library(Rtools)
 library(rgdal)
 library(RColorBrewer)
+library(sf)
 
 #Import data 
 Raw <- read.table("Data/Raw Data.txt", header = TRUE, sep = "\t")
@@ -174,8 +175,16 @@ ggplot(data = Raw, aes(x = factor(1), fill = LorF)) +
   blank_theme
 
 ############################################################################################## Map
+#https://www.naturalearthdata.com/about/
+MapLandBoundaries <- st_read("Analysis/Maps/ne_50m_admin_0_boundary_lines_land/ne_50m_admin_0_boundary_lines_land.shp")
+MapCoastline <- st_read("Analysis/Maps/ne_50m_coastline/ne_50m_coastline.shp")
 
-
+ggplot() + 
+  geom_sf(data = MapLandBoundaries, size = 1, color = "black") +
+  geom_sf(data = MapCoastline, size = 1, color = "black") + 
+  ggtitle("Map") + 
+  coord_sf()
+  
 
 
 
