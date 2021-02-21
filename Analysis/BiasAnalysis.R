@@ -6,6 +6,9 @@ library(dplyr)
 library(plyr)
 library(ggplot2)
 library(tidyverse)
+library(Rtools)
+library(rgdal)
+library(RColorBrewer)
 
 #Import data 
 Raw <- read.table("Data/Raw Data.txt", header = TRUE, sep = "\t")
@@ -13,6 +16,7 @@ SpeciesData <- read.table("Data/Species Level.txt", header = TRUE, sep = "\t")
 TotalSpeciesDataV1 <- read.table("Data/SubfamilySpeciesV1.txt", header = TRUE, sep = "\t")
 TotalSpeciesDataV2 <- read.table("Data/SubfamilySpeciesV2.txt", header = TRUE, sep = "\t")
 TotalSpeciesDataV3 <- read.table("Data/SubfamilySpeciesV3.txt", header = TRUE, sep = "\t")
+Locations <- read.table("Data/Locations.txt", header = TRUE, sep = "\t")
 
 #Blank theme for ggplot
 blank_theme <- theme_minimal() +
