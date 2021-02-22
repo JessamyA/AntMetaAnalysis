@@ -50,17 +50,36 @@ ggplot(Rank, aes(x = AveResults)) +
         panel.border = element_rect(colour = "black", fill = NA)) +
   xlim(0, 250)
 
-############################################################################################## Species
+############################################################################################## Subfamily data Occurrence
+str(SpeciesData)
+SpeciesData$Subfamily <- as.factor(SpeciesData$Subfamily)
+str(SpeciesData$Subfamily)
+levels(SpeciesData$Subfamily)
+SpeciesData$StorageYN <- as.factor(SpeciesData$StorageYN)
+str(SpeciesData$StorageYN)
+levels(SpeciesData$StorageYN)
+SpeciesData$StorageType <- as.factor(SpeciesData$StorageType)
+str(SpeciesData$StorageType)
+levels(SpeciesData$StorageType)
+SpeciesData$MobilityType <- as.factor(SpeciesData$MobilityType)
+str(SpeciesData$MobilityType)
+levels(SpeciesData$MobilityType)
+SpeciesData$MobilityYN <- as.factor(SpeciesData$MobilityYN)
+str(SpeciesData$MobilityYN)
+levels(SpeciesData$MobilityYN)
+str(SpeciesData)
 
 #Subsets for Mobility and Storage data with NO RANK ADJUSTMENT
-MobSpecies <- SpeciesData[!is.na(SpeciesData$MobilityYN),]
-StoSpecies <- SpeciesData[!is.na(SpeciesData$StorageYN),]
+MobSpecies <- SpeciesData[!is.na(SpeciesData$MobilityYN),] #74 obs.
+StoSpecies <- SpeciesData[!is.na(SpeciesData$StorageYN),] #42 obs.
 
-#Occurence of mobility data split among subfamilies - as pie chart
-ggplot(MobSpecies, aes(x = Subfamily, y = factor(1), fill = MobilityYN)) +
-  geom_bar(stat = "identity") +
-  geom_text(aes(label = factor(1), vjust = 1.6, color = "white", size = 3.5))
+MobSpeciesY <- MobSpecies[!(MobSpecies$MobilityYN == "N"),] #74 obs.
+MobSpeciesN <- MobSpecies[!(MobSpecies$MobilityYN == "Y"),] #3 obs.
 
+StoSpeciesY <- StoSpecies[!(StoSpecies$StorageYN == "N"),] #38 obs.
+StoSpeciesN <- StoSpecies[!(StoSpecies$StorageYN == "Y"),] #4 obs.
+
+#Occurrence of mobility data split among subfamilies - as pie chart
 ggplot(data = MobSpecies, aes(x = factor(1), fill = Subfamily)) +
   geom_bar(color = "black") +
   coord_polar("y", start = 0) +
@@ -73,7 +92,7 @@ ggplot(data = MobSpecies, aes(x = factor(1), fill = Subfamily)) +
                                "#cc6bff")) +
   blank_theme
 
-#Occurence of storage data split among subfamilies - as pie chart
+#Occurrence of storage data split among subfamilies - as pie chart
 ggplot(data = StoSpecies, aes(x = factor(1), fill = Subfamily)) +
   geom_bar(color = "black") +
   coord_polar("y", start = 0) +
@@ -82,8 +101,20 @@ ggplot(data = StoSpecies, aes(x = factor(1), fill = Subfamily)) +
                                "#cc6bff")) +
   blank_theme
 
+############################################################################################## Type Counts
 
+#Mobility
+MobSpeciesType <- MobSpeciesY[!is.na(MobSpeciesY$MobilityType),]
+MoTypeCount <- count(MobSpeciesType, "MobilityType")
+str(MoTypeCount)
 
+ggplot(MoTypeCount, aes(x = MobilityType, y = freq)) +
+  geom_bar(stat = "identity")
 
+#Storage
+StoSpeciesType <- StoSpeciesY[!is.na(StoSpeciesY$StorageType),]
+StTypeCount <- count(StoSpeciesType, "StorageType")
+str(StTypeCount)
 
-
+ggplot(StTypeCount, aes(x = StorageType, y = freq)) +
+  geom_bar(stat = "identity")
