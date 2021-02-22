@@ -174,9 +174,40 @@ ggplot(data = Raw, aes(x = factor(1), fill = LorF)) +
   scale_fill_manual(values = c("Light Green", "Light Blue")) +
   blank_theme
 
+############################################################################################## Invasive or Not
+
+#Counts
+str(Raw$Invasive)
+Raw$Invasive <- as.factor(Raw$Invasive)
+str(Raw$Invasive)
+levels(Raw$LorF)
+Invasive <- count(Raw, "Invasive")
+sum(Invasive$freq)
+
+levels(Invasive$Invasive)
+Invasive$Invasive <- factor(Invasive$Invasive,
+                            levels = c("N",
+                                       "Y",
+                                       ""))
+levels(Invasive$Invasive)
+
+#Piechart for Invasive
+ggplot(data = Invasive, aes(x = "", y = freq, fill = Invasive)) +
+  geom_bar(color = "black", stat = "identity") +
+  coord_polar("y", start = 0) +
+  scale_fill_manual(values = c("Light Green", "Light Blue", "grey")) +
+  blank_theme
+
 ############################################################################################## Map
 
-#https://www.naturalearthdata.com/about/
+#Location of - https://www.naturalearthdata.com/about/
+#Version 1 - for map only plot
+MapLandBoundaries <- st_read("Analysis/Maps/ne_50m_admin_0_boundary_lines_land/ne_50m_admin_0_boundary_lines_land.shp")
+MapCoastline <- st_read("Analysis/Maps/ne_50m_coastline/ne_50m_coastline.shp")
+MapLand <- st_read("Analysis/Maps/ne_50m_land/ne_50m_land.shp")
+MapOcean <- st_read("Analysis/Maps/ne_50m_ocean/ne_50m_ocean.shp")
+
+#Version 2 - for combination map
 MapLandBoundaries <- readOGR("Analysis/Maps/ne_50m_admin_0_boundary_lines_land/ne_50m_admin_0_boundary_lines_land.shp")
 MapCoastline <- readOGR("Analysis/Maps/ne_50m_coastline/ne_50m_coastline.shp")
 MapLand <- readOGR("Analysis/Maps/ne_50m_land/ne_50m_land.shp")
@@ -220,11 +251,3 @@ ggplot(Locations, aes(x = Longitude, y = Latitude)) +
                                     fill = NA),
         legend.text = element_blank()) +
   labs(fill = "Density")
-
-
-
-
-
-
-
-
