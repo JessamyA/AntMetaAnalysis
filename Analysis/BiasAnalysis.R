@@ -175,34 +175,51 @@ ggplot(data = Raw, aes(x = factor(1), fill = LorF)) +
   blank_theme
 
 ############################################################################################## Map
+
 #https://www.naturalearthdata.com/about/
-MapLandBoundaries <- st_read("Analysis/Maps/ne_50m_admin_0_boundary_lines_land/ne_50m_admin_0_boundary_lines_land.shp")
-MapCoastline <- st_read("Analysis/Maps/ne_50m_coastline/ne_50m_coastline.shp")
+MapLandBoundaries <- readOGR("Analysis/Maps/ne_50m_admin_0_boundary_lines_land/ne_50m_admin_0_boundary_lines_land.shp")
+MapCoastline <- readOGR("Analysis/Maps/ne_50m_coastline/ne_50m_coastline.shp")
+MapLand <- readOGR("Analysis/Maps/ne_50m_land/ne_50m_land.shp")
+MapOcean <- readOGR("Analysis/Maps/ne_50m_ocean/ne_50m_ocean.shp")
 
-ggplot() + 
-  geom_sf(data = MapLandBoundaries, size = 1, color = "black") +
-  geom_sf(data = MapCoastline, size = 1, color = "black") + 
-  ggtitle("Map") + 
-  coord_sf()
-  
+#Map plot
+ggplot() +
+  geom_sf(data = MapCoastline, size = .5, color = "black") + 
+  geom_sf(data = MapLand, fill = "beige") +
+  geom_sf(data = MapLandBoundaries, size = .5, color = "black") +
+  geom_sf(data = MapOcean, fill = "light cyan") +
+  ggtitle("Map")
 
+#Scatter plot of data
+ggplot(Locations, aes(x = Longitude, y = Latitude)) +
+  geom_point() +
+  stat_density2d(aes(fill = ..level..), alpha=0.5, geom="polygon") +
+  scale_fill_gradientn(colours = rev(brewer.pal(7, "Spectral"))) +
+  xlim(-180, 180) +
+  ylim(-90, 90)
 
+#Fortify maps to combine into one plot
+MapLandBoundaries2 <- fortify(MapLandBoundaries)
+MapCoastline2 <- fortify(MapCoastline)
+MapLand2 <- fortify(MapLand)
+MapOcean2 <- fortify(MapOcean)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ggplot(Locations, aes(x = Longitude, y = Latitude)) +
+  stat_density2d(aes(fill = ..level..), alpha = 0.5, geom = "polygon") +
+  geom_point(colour="red") +
+  geom_path(data = MapCoastline2, aes(x = long, y = lat, group = group), color = "grey50") +
+  geom_path(data = MapLandBoundaries2, aes(x = long, y = lat, group = group), color = "grey50") +
+  scale_fill_gradientn(colours = rev(brewer.pal(7,"Spectral"))) +
+  coord_fixed() + 
+  xlim(-180, 180) +
+  ylim(-90, 90) +
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        panel.border = element_rect(colour = "black",
+                                    fill = NA),
+        legend.text = element_blank()) +
+  labs(fill = "Density")
 
 
 
