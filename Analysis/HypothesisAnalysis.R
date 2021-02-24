@@ -9,6 +9,8 @@ library(ggplot2)
 #Import data 
 Rank <- read.table("Data/Ranking.txt", header = TRUE, sep = "\t")
 SpeciesData <- read.table("Data/SpeciesLevel.txt", header = TRUE, sep = "\t") #NO RANK ADJUSTMENT
+MobType <- read.table("Data/SubFamMobType.txt", header = TRUE, sep = "\t")
+StoType <- read.table("Data/SubFamStoType.txt", header = TRUE, sep = "\t")
 
 #Blank theme for ggplot
 blank_theme <- theme_minimal() +
@@ -109,7 +111,14 @@ MoTypeCount <- count(MobSpeciesType, "MobilityType")
 str(MoTypeCount)
 
 ggplot(MoTypeCount, aes(x = MobilityType, y = freq)) +
-  geom_bar(stat = "identity")
+  geom_bar(stat = "identity", fill = "Light Blue") +
+  geom_text(aes(label = freq), vjust = 1.6, color = "black", size = 3.5) +
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        panel.border = element_rect(colour = "black",
+                                    fill = NA,)) +
+  labs(x = "Mobility Type", y = "Frequency")
 
 #Storage
 StoSpeciesType <- StoSpeciesY[!is.na(StoSpeciesY$StorageType),]
@@ -117,4 +126,39 @@ StTypeCount <- count(StoSpeciesType, "StorageType")
 str(StTypeCount)
 
 ggplot(StTypeCount, aes(x = StorageType, y = freq)) +
-  geom_bar(stat = "identity")
+  geom_bar(stat = "identity", fill = "Light Blue") +
+  geom_text(aes(label = freq), vjust = 1.6, color = "black", size = 3.5) +
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        panel.border = element_rect(colour = "black",
+                                    fill = NA,)) +
+  labs(x = "Mobility Type", y = "Frequency")
+
+############################################################################################## Subfamily Type Graphs
+
+ggplot(StoType, aes(x = Subfamily, y = Count, fill = Type)) +
+  geom_bar(stat = "identity", position = position_dodge()) +
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        panel.border = element_rect(colour = "black",
+                                    fill = NA,))
+
+ggplot(MobType, aes(x = Subfamily, y = Count, fill = Type)) +
+  geom_bar(stat = "identity", position = position_dodge()) +
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        panel.border = element_rect(colour = "black",
+                                    fill = NA,))
+
+
+
+
+
+
+
+
+
+
