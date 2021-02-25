@@ -5,6 +5,7 @@ setwd("C:/Users/jessa/Documents/AntMetaAnalysis")
 library(dplyr)
 library(plyr)
 library(ggplot2)
+library(ape)
 
 #Import data 
 Rank <- read.table("Data/Ranking.txt", header = TRUE, sep = "\t")
@@ -143,7 +144,10 @@ ggplot(StoType, aes(x = Subfamily, y = Count, fill = Type)) +
         panel.grid.minor = element_blank(),
         panel.background = element_blank(),
         panel.border = element_rect(colour = "black",
-                                    fill = NA,))
+                                    fill = NA,)) +
+  scale_fill_manual(values = c("pink",
+                               "light blue",
+                               "light green"))
 
 ggplot(MobType, aes(x = Subfamily, y = Count, fill = Type)) +
   geom_bar(stat = "identity", position = position_dodge()) +
@@ -151,14 +155,15 @@ ggplot(MobType, aes(x = Subfamily, y = Count, fill = Type)) +
         panel.grid.minor = element_blank(),
         panel.background = element_blank(),
         panel.border = element_rect(colour = "black",
-                                    fill = NA,))
+                                    fill = NA,)) +
+  scale_fill_manual(values = c("pink",
+                               "light green",
+                               "light blue",
+                               "violet"))
 
+############################################################################################## Phylogenetic Tree
 
-
-
-
-
-
-
+SubfamTree <- ape::read.tree(text = '(((((((Heteroponerinae, Ectatomminae), Myrmicinae), Formicinae), ((Aneuretinae, Dolichoderinae),(Myrmeciinae, Pseudomyrmecinae))), Dorylinae), ((((Agroecomyrmecinae, Paraponerinae), Ponerinae), Proceratiinae), (Amblyoponinae, Apomyrminae))), (Leptanillinae, Martialinae));')
+plot(SubfamTree)
 
 
