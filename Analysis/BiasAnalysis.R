@@ -10,6 +10,7 @@ library(Rtools)
 library(rgdal)
 library(RColorBrewer)
 library(sf)
+library(MASS)
 
 #Import data 
 Raw <- read.table("Data/Raw Data.txt", header = TRUE, sep = "\t")
@@ -130,13 +131,14 @@ ComboSubfam$Expected <- as.numeric(ComboSubfam$Expected)
 ComboSubfam$Observed <- as.numeric(ComboSubfam$Observed)
 str(ComboSubfam)
 
-#Transform to percentages for comparison
 ES <- sum(ComboSubfam$Expected)
+OS <- sum(ComboSubfam$Observed)
+
+#OR Transform to percentages for comparison
 ComboSubfam["Expected"] = ComboSubfam["Expected"]/ES
 ComboSubfam["Expected"] = ComboSubfam["Expected"]*100
 sum(ComboSubfam$Expected)
 
-OS <- sum(ComboSubfam$Observed)
 ComboSubfam["Observed"] = ComboSubfam["Observed"]/OS
 ComboSubfam["Observed"] = ComboSubfam["Observed"]*100
 sum(ComboSubfam$Observed)
@@ -146,16 +148,15 @@ sum(ComboSubfam$Expected)
 sum(ComboSubfam$Observed)
 
 #OR multiply Observed up to same value
-ComboSubfam["Observed"] = ComboSubfam["Observed"]*(ES/OS)
-sum(ComboSubfam$Observed)
-ComboSubfam <- ComboSubfam %>% mutate_at(vars(Observed, Expected), funs(round(., 0)))
+ComboSubfam["Expected"] = ComboSubfam["Expected"]*(OS/ES)
+#ComboSubfam <- ComboSubfam %>% mutate_at(vars(Observed, Expected), funs(round(., 0)))
 sum(ComboSubfam$Expected)
 sum(ComboSubfam$Observed)
 
+str(ComboSubfam)
+
 #Stat test - Chi-squared
-Chidata <- ComboSubfam[,!(colnames(ComboSubfam) %in% "Expected")]
-ExRatio <- (ComboSubfam$Expected)/ES
-Chi <- chisq.test(Chidata, p = ExRatio)
+chisq.test(ComboSubfam())
 
 ############################################################################################## Lab vs. Field
 
