@@ -101,6 +101,8 @@ ggplot(data = TotalSpeciesDataV2,
                                "Grey")) +
   blank_theme
 
+(TotalSpeciesDataV2[8,"ExtantSpecies"]/sum(TotalSpeciesDataV2$ExtantSpecies))*100
+
 #Piechart for Subfamily occurrence in Total - VERSION 3
 ggplot(data = TotalSpeciesDataV3, aes(x = "", y = ExtantSpecies, fill = Subfamily)) +
   geom_bar(color = "black", stat = "identity") +

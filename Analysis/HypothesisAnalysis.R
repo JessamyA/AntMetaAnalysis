@@ -147,7 +147,14 @@ ggplot(StoType, aes(x = Subfamily, y = Count, fill = Type)) +
                                     fill = NA,)) +
   scale_fill_manual(values = c("pink",
                                "light blue",
-                               "light green"))
+                               "light green")) +
+  scale_x_discrete(limits = c("Amblyoponinae",
+                              "Ponerinae",
+                              "Dorylinae",
+                              "Dolichoderinae",
+                              "Formicinae",
+                              "Myrmicinae",
+                              "Ectatomminae"))
 
 ggplot(MobType, aes(x = Subfamily, y = Count, fill = Type)) +
   geom_bar(stat = "identity", position = position_dodge()) +
@@ -159,11 +166,19 @@ ggplot(MobType, aes(x = Subfamily, y = Count, fill = Type)) +
   scale_fill_manual(values = c("pink",
                                "light green",
                                "light blue",
-                               "violet"))
+                               "violet")) +
+  scale_x_discrete(limits = c("Amblyoponinae",
+                              "Ponerinae",
+                              "Dorylinae",
+                              "Dolichoderinae",
+                              "Formicinae",
+                              "Myrmicinae",
+                              "Ectatomminae"))
 
 ############################################################################################## Phylogenetic Tree
 
 SubfamTree <- ape::read.tree(text = '(((((((Heteroponerinae, Ectatomminae), Myrmicinae), Formicinae), ((Aneuretinae, Dolichoderinae),(Myrmeciinae, Pseudomyrmecinae))), Dorylinae), ((((Agroecomyrmecinae, Paraponerinae), Ponerinae), Proceratiinae), (Amblyoponinae, Apomyrminae))), (Leptanillinae, Martialinae));')
 plot(SubfamTree)
 
-
+SubfamTreeSMALL <- ape::read.tree(text = '(((((Ectatomminae, Myrmicinae), Formicinae), Dolichoderinae), Dorylinae), (Ponerinae, Amblyoponinae));')
+plot(SubfamTreeSMALL)
