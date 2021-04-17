@@ -1,0 +1,5 @@
+Type	Count
+A	22
+I	27
+N	21
+U	3

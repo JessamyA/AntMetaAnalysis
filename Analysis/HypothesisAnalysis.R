@@ -12,6 +12,8 @@ Rank <- read.table("Data/Ranking.txt", header = TRUE, sep = "\t")
 SpeciesData <- read.table("Data/SpeciesLevel.txt", header = TRUE, sep = "\t") #NO RANK ADJUSTMENT
 MobType <- read.table("Data/SubFamMobType.txt", header = TRUE, sep = "\t")
 StoType <- read.table("Data/SubFamStoType.txt", header = TRUE, sep = "\t")
+MobCount <- read.table("Data/MobTypeCount.txt", header = TRUE, sep = "\t")
+StoCount <- read.table("Data/StoTypeCount.txt", header = TRUE, sep = "\t")
 
 #Blank theme for ggplot
 blank_theme <- theme_minimal() +
@@ -112,7 +114,7 @@ MoTypeCount <- count(MobSpeciesType, "MobilityType")
 str(MoTypeCount)
 
 ggplot(MoTypeCount, aes(x = MobilityType, y = freq)) +
-  geom_bar(stat = "identity", fill = "Light Blue") +
+  geom_bar(stat = "identity", fill = "Light Blue", color = "black") +
   geom_text(aes(label = freq), vjust = 1.6, color = "black", size = 3.5) +
   theme(panel.grid.major = element_blank(),
         panel.grid.minor = element_blank(),
@@ -120,6 +122,18 @@ ggplot(MoTypeCount, aes(x = MobilityType, y = freq)) +
         panel.border = element_rect(colour = "black",
                                     fill = NA,)) +
   labs(x = "Mobility Type", y = "Frequency")
+
+ggplot(MobCount, aes(x = Type, y = Count)) +
+  geom_bar(stat = "identity", color = "black", fill = (values = c("pink",
+                                                                  "light green",
+                                                                  "light blue",
+                                                                  "violet"))) +
+  geom_text(aes(label = Count), vjust = 1.6, color = "black", size = 3.5) +
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        panel.border = element_rect(colour = "black",
+                                    fill = NA,))
 
 #Storage
 StoSpeciesType <- StoSpeciesY[!is.na(StoSpeciesY$StorageType),]
@@ -127,19 +141,31 @@ StTypeCount <- count(StoSpeciesType, "StorageType")
 str(StTypeCount)
 
 ggplot(StTypeCount, aes(x = StorageType, y = freq)) +
-  geom_bar(stat = "identity", fill = "Light Blue") +
+  geom_bar(stat = "identity", fill = "Light Blue", color = "black") +
   geom_text(aes(label = freq), vjust = 1.6, color = "black", size = 3.5) +
   theme(panel.grid.major = element_blank(),
         panel.grid.minor = element_blank(),
         panel.background = element_blank(),
         panel.border = element_rect(colour = "black",
                                     fill = NA,)) +
-  labs(x = "Mobility Type", y = "Frequency")
+  labs(x = "Storage Type", y = "Frequency")
+
+ggplot(StoCount, aes(x = Type, y = Count)) +
+  geom_bar(stat = "identity", color = "black", fill = (values = c("pink",
+                                                                  "light blue",
+                                                                  "light green"))) +
+  geom_text(aes(label = Count), vjust = 1.6, color = "black", size = 3.5) +
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        panel.border = element_rect(colour = "black",
+                                    fill = NA,))
 
 ############################################################################################## Subfamily Type Graphs
 
 ggplot(StoType, aes(x = Subfamily, y = Count, fill = Type)) +
-  geom_bar(stat = "identity", position = position_dodge()) +
+  geom_bar(stat = "identity", position = position_dodge(), color = "black") +
+  geom_text(aes(label = Count), position = position_dodge(width = .9), vjust = 1.6, color = "black", size = 3.5) +
   theme(panel.grid.major = element_blank(),
         panel.grid.minor = element_blank(),
         panel.background = element_blank(),
@@ -157,7 +183,8 @@ ggplot(StoType, aes(x = Subfamily, y = Count, fill = Type)) +
                               "Ectatomminae"))
 
 ggplot(MobType, aes(x = Subfamily, y = Count, fill = Type)) +
-  geom_bar(stat = "identity", position = position_dodge()) +
+  geom_bar(stat = "identity", position = position_dodge(), color = "black") +
+  geom_text(aes(label = Count), position = position_dodge(width = .9), vjust = 1.6, color = "black", size = 3.5) +
   theme(panel.grid.major = element_blank(),
         panel.grid.minor = element_blank(),
         panel.background = element_blank(),
@@ -182,3 +209,15 @@ plot(SubfamTree)
 
 SubfamTreeSMALL <- ape::read.tree(text = '(((((Ectatomminae, Myrmicinae), Formicinae), Dolichoderinae), Dorylinae), (Ponerinae, Amblyoponinae));')
 plot(SubfamTreeSMALL)
+
+
+
+
+
+
+
+
+
+
+
+
