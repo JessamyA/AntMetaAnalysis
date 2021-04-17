@@ -12,10 +12,10 @@ Ectatomminae	E	0
 Ectatomminae	I	0
 Ectatomminae	Larvae	0
 Formicinae	E	3
-Formicinae	I	11
+Formicinae	I	12
 Formicinae	Larvae	1
-Myrmicinae	E	12
-Myrmicinae	I	9
+Myrmicinae	E	13.5
+Myrmicinae	I	10.5
 Myrmicinae	Larvae	0
 Ponerinae	E	1
 Ponerinae	I	0
