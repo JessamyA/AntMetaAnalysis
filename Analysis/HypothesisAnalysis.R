@@ -14,6 +14,8 @@ MobType <- read.table("Data/SubFamMobType.txt", header = TRUE, sep = "\t")
 StoType <- read.table("Data/SubFamStoType.txt", header = TRUE, sep = "\t")
 MobCount <- read.table("Data/MobTypeCount.txt", header = TRUE, sep = "\t")
 StoCount <- read.table("Data/StoTypeCount.txt", header = TRUE, sep = "\t")
+AMobType <- read.table("Data/SubFamMobType-ADJUSTED.txt", header = TRUE, sep = "\t")
+AStoType <- read.table("Data/SubFamStoType-ADJUSTED.txt", header = TRUE, sep = "\t")
 
 #Blank theme for ggplot
 blank_theme <- theme_minimal() +
@@ -163,6 +165,8 @@ ggplot(StoCount, aes(x = Type, y = Count)) +
 
 ############################################################################################## Subfamily Type Graphs
 
+#STORAGE
+#Normal
 ggplot(StoType, aes(x = Subfamily, y = Count, fill = Type)) +
   geom_bar(stat = "identity", position = position_dodge(), color = "black") +
   geom_text(aes(label = Count), position = position_dodge(width = .9), vjust = 1.6, color = "black", size = 3.5) +
@@ -182,6 +186,30 @@ ggplot(StoType, aes(x = Subfamily, y = Count, fill = Type)) +
                               "Myrmicinae",
                               "Ectatomminae"))
 
+#Adjusted
+ggplot(AStoType, aes(x = Subfamily, y = Count, fill = Type)) +
+  geom_bar(stat = "identity", position = position_dodge(), color = "black") +
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        panel.border = element_rect(colour = "black",
+                                    fill = NA,)) +
+  scale_fill_manual(values = c("pink",
+                               "light green",
+                               "light blue",
+                               "violet")) +
+  scale_x_discrete(limits = c("Amblyoponinae",
+                              "Ponerinae",
+                              "Dorylinae",
+                              "Dolichoderinae",
+                              "Formicinae",
+                              "Myrmicinae",
+                              "Ectatomminae"))
+
+#geom_text(aes(label = Count), position = position_dodge(width = .9), vjust = 1.6, color = "black", size = 3.5)
+
+#MOBILITY
+#Normal
 ggplot(MobType, aes(x = Subfamily, y = Count, fill = Type)) +
   geom_bar(stat = "identity", position = position_dodge(), color = "black") +
   geom_text(aes(label = Count), position = position_dodge(width = .9), vjust = 1.6, color = "black", size = 3.5) +
@@ -201,6 +229,28 @@ ggplot(MobType, aes(x = Subfamily, y = Count, fill = Type)) +
                               "Formicinae",
                               "Myrmicinae",
                               "Ectatomminae"))
+
+#Adjusted
+ggplot(AMobType, aes(x = Subfamily, y = Count, fill = Type)) +
+  geom_bar(stat = "identity", position = position_dodge(), color = "black") +
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        panel.border = element_rect(colour = "black",
+                                    fill = NA,)) +
+  scale_fill_manual(values = c("pink",
+                               "light green",
+                               "light blue",
+                               "violet")) +
+  scale_x_discrete(limits = c("Amblyoponinae",
+                              "Ponerinae",
+                              "Dorylinae",
+                              "Dolichoderinae",
+                              "Formicinae",
+                              "Myrmicinae",
+                              "Ectatomminae"))
+
+# geom_text(aes(label = Count), position = position_dodge(width = .9), vjust = 1.6, color = "black", size = 3.5)
 
 ############################################################################################## Phylogenetic Tree
 
