@@ -186,9 +186,29 @@ ggplot(StoType, aes(x = Subfamily, y = Count, fill = Type)) +
                               "Myrmicinae",
                               "Ectatomminae"))
 
-#Adjusted
+#Adjusted v1
 ggplot(AStoType, aes(x = Subfamily, y = Count, fill = Type)) +
   geom_bar(stat = "identity", position = position_dodge(), color = "black") +
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        panel.border = element_rect(colour = "black",
+                                    fill = NA,)) +
+  scale_fill_manual(values = c("pink",
+                               "light green",
+                               "light blue",
+                               "violet")) +
+  scale_x_discrete(limits = c("Amblyoponinae",
+                              "Ponerinae",
+                              "Dorylinae",
+                              "Dolichoderinae",
+                              "Formicinae",
+                              "Myrmicinae",
+                              "Ectatomminae"))
+
+#Adjusted v2
+ggplot(AStoType, aes(x = Subfamily, y = Count, fill = Type)) +
+  geom_bar(stat = "identity", color = "black") +
   theme(panel.grid.major = element_blank(),
         panel.grid.minor = element_blank(),
         panel.background = element_blank(),
@@ -230,9 +250,29 @@ ggplot(MobType, aes(x = Subfamily, y = Count, fill = Type)) +
                               "Myrmicinae",
                               "Ectatomminae"))
 
-#Adjusted
+#Adjusted v1
 ggplot(AMobType, aes(x = Subfamily, y = Count, fill = Type)) +
   geom_bar(stat = "identity", position = position_dodge(), color = "black") +
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        panel.border = element_rect(colour = "black",
+                                    fill = NA,)) +
+  scale_fill_manual(values = c("pink",
+                               "light green",
+                               "light blue",
+                               "violet")) +
+  scale_x_discrete(limits = c("Amblyoponinae",
+                              "Ponerinae",
+                              "Dorylinae",
+                              "Dolichoderinae",
+                              "Formicinae",
+                              "Myrmicinae",
+                              "Ectatomminae"))
+
+#Adjusted v2
+ggplot(AMobType, aes(x = Subfamily, y = Count, fill = Type)) +
+  geom_bar(stat = "identity", color = "black") +
   theme(panel.grid.major = element_blank(),
         panel.grid.minor = element_blank(),
         panel.background = element_blank(),
