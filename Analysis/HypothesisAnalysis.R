@@ -311,6 +311,7 @@ TABFisherNOAdj <- as.table(as.matrix(FisherNOAdj))
 balloonplot(t(TABFisherNOAdj), main = "", xlab = "Storage", ylab = "Mobility",
             label = FALSE, show.margins = FALSE)
 
+
 #Including High
 FisherAdjH <- read.delim("Data/Fishers+H.txt", header = TRUE, row.names = 1, sep = "\t")
 TABFisherAdjH <- as.table(as.matrix(FisherAdjH))
@@ -325,11 +326,13 @@ TABFisherAdjHM <- as.table(as.matrix(FisherAdjHM))
 balloonplot(t(TABFisherAdjHM), main = "", xlab = "Storage", ylab = "Mobility",
             label = FALSE, show.margins = FALSE)
 
-
-
-
-
-
+#FISHERS TEST
+fisher.test(FisherNOAdj)
+#p-value = 0.3571
+fisher.test(FisherAdjH)
+#p-value = 0.2305
+fisher.test(FisherAdjHM)
+#p-value = 0.006366
 
 
 
