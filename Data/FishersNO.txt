@@ -1,0 +1,3 @@
+NA	MobY	MobN
+StoY	9	0.5
+StoN	3.5	1

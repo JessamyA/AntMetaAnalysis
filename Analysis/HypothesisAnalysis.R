@@ -6,6 +6,7 @@ library(dplyr)
 library(plyr)
 library(ggplot2)
 library(ape)
+library(gplots)
 
 #Import data 
 Rank <- read.table("Data/Ranking.txt", header = TRUE, sep = "\t")
@@ -195,9 +196,8 @@ ggplot(AStoType, aes(x = Subfamily, y = Count, fill = Type)) +
         panel.border = element_rect(colour = "black",
                                     fill = NA,)) +
   scale_fill_manual(values = c("pink",
-                               "light green",
                                "light blue",
-                               "violet")) +
+                               "light green")) +
   scale_x_discrete(limits = c("Amblyoponinae",
                               "Ponerinae",
                               "Dorylinae",
@@ -215,9 +215,8 @@ ggplot(AStoType, aes(x = Subfamily, y = Count, fill = Type)) +
         panel.border = element_rect(colour = "black",
                                     fill = NA,)) +
   scale_fill_manual(values = c("pink",
-                               "light green",
                                "light blue",
-                               "violet")) +
+                               "light green")) +
   scale_x_discrete(limits = c("Amblyoponinae",
                               "Ponerinae",
                               "Dorylinae",
@@ -294,11 +293,45 @@ ggplot(AMobType, aes(x = Subfamily, y = Count, fill = Type)) +
 
 ############################################################################################## Phylogenetic Tree
 
+#All subfamilies
 SubfamTree <- ape::read.tree(text = '(((((((Heteroponerinae, Ectatomminae), Myrmicinae), Formicinae), ((Aneuretinae, Dolichoderinae),(Myrmeciinae, Pseudomyrmecinae))), Dorylinae), ((((Agroecomyrmecinae, Paraponerinae), Ponerinae), Proceratiinae), (Amblyoponinae, Apomyrminae))), (Leptanillinae, Martialinae));')
 plot(SubfamTree)
 
+#Subfamiles found in meta-analysis
 SubfamTreeSMALL <- ape::read.tree(text = '(((((Ectatomminae, Myrmicinae), Formicinae), Dolichoderinae), Dorylinae), (Ponerinae, Amblyoponinae));')
 plot(SubfamTreeSMALL)
+
+############################################################################################## Contingency tables
+
+#BALLOON PLOTS
+#No Adjustments
+FisherNOAdj <- read.delim("Data/FishersNo.txt", header = TRUE, row.names = 1, sep = "\t")
+TABFisherNOAdj <- as.table(as.matrix(FisherNOAdj))
+
+balloonplot(t(TABFisherNOAdj), main = "", xlab = "Storage", ylab = "Mobility",
+            label = FALSE, show.margins = FALSE)
+
+#Including High
+FisherAdjH <- read.delim("Data/Fishers+H.txt", header = TRUE, row.names = 1, sep = "\t")
+TABFisherAdjH <- as.table(as.matrix(FisherAdjH))
+
+balloonplot(t(TABFisherAdjH), main = "", xlab = "Storage", ylab = "Mobility",
+            label = FALSE, show.margins = FALSE)
+
+#Including High & Medium
+FisherAdjHM <- read.delim("Data/Fishers+H+M.txt", header = TRUE, row.names = 1, sep = "\t")
+TABFisherAdjHM <- as.table(as.matrix(FisherAdjHM))
+
+balloonplot(t(TABFisherAdjHM), main = "", xlab = "Storage", ylab = "Mobility",
+            label = FALSE, show.margins = FALSE)
+
+
+
+
+
+
+
+
 
 
 
