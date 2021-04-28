@@ -7,6 +7,7 @@ library(plyr)
 library(ggplot2)
 library(ape)
 library(gplots)
+library(ggpubr)
 
 #Import data 
 Rank <- read.table("Data/Ranking.txt", header = TRUE, sep = "\t")
@@ -308,23 +309,46 @@ plot(SubfamTreeSMALL)
 FisherNOAdj <- read.delim("Data/FishersNo.txt", header = TRUE, row.names = 1, sep = "\t")
 TABFisherNOAdj <- as.table(as.matrix(FisherNOAdj))
 
-balloonplot(t(TABFisherNOAdj), main = "", xlab = "Storage", ylab = "Mobility",
-            label = FALSE, show.margins = FALSE)
-
+balloonplot(t(TABFisherNOAdj),
+            main = "No Adj",
+            xlab = "Storage",
+            ylab = "Mobility",
+            rowmar = .75,
+            colmar = .75,
+            label = TRUE,
+            show.margins = FALSE,
+            cum.margins = FALSE,
+            dotcolor = "Violet")
 
 #Including High
 FisherAdjH <- read.delim("Data/Fishers+H.txt", header = TRUE, row.names = 1, sep = "\t")
 TABFisherAdjH <- as.table(as.matrix(FisherAdjH))
 
-balloonplot(t(TABFisherAdjH), main = "", xlab = "Storage", ylab = "Mobility",
-            label = FALSE, show.margins = FALSE)
+balloonplot(t(TABFisherAdjH), main = "H",
+            xlab = "Storage",
+            ylab = "Mobility",
+            rowmar = .75,
+            colmar = .75,
+            label = TRUE,
+            show.margins = FALSE,
+            cum.margins = FALSE,
+            dotcolor = "Violet")
 
 #Including High & Medium
 FisherAdjHM <- read.delim("Data/Fishers+H+M.txt", header = TRUE, row.names = 1, sep = "\t")
 TABFisherAdjHM <- as.table(as.matrix(FisherAdjHM))
 
-balloonplot(t(TABFisherAdjHM), main = "", xlab = "Storage", ylab = "Mobility",
-            label = FALSE, show.margins = FALSE)
+balloonplot(t(TABFisherAdjHM), main = "H+M",
+            xlab = "Storage",
+            ylab = "Mobility",
+            rowmar = .75,
+            colmar = .75,
+            label = TRUE,
+            show.margins = FALSE,
+            cum.margins = FALSE,
+            dotcolor = "Violet")
+
+ggballoonplot(TABFisherAdjHM)
 
 #FISHERS TEST
 fisher.test(FisherNOAdj)
