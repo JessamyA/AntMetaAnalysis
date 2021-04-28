@@ -1,22 +1,22 @@
-Subfamily	Type	Count
-Amblyoponinae	E	0
-Amblyoponinae	I	0
-Amblyoponinae	Larvae	0
-Dolichoderinae	E	0
-Dolichoderinae	I	0
-Dolichoderinae	Larvae	0
-Dorylinae	E	0
-Dorylinae	I	0
-Dorylinae	Larvae	0
-Ectatomminae	E	0
-Ectatomminae	I	0
-Ectatomminae	Larvae	0
-Formicinae	E	7.6875
-Formicinae	I	30.75
-Formicinae	Larvae	2.5625
-Myrmicinae	E	23.0625
-Myrmicinae	I	17.9375
-Myrmicinae	Larvae	0
-Ponerinae	E	41
-Ponerinae	I	0
-Ponerinae	Larvae	0
+Subfamily	Type	%	
+Amblyoponinae	E	0	0
+Amblyoponinae	I	0	
+Amblyoponinae	Larvae	0	
+Dolichoderinae	E	0	0
+Dolichoderinae	I	0	
+Dolichoderinae	Larvae	0	
+Dorylinae	E	0	0
+Dorylinae	I	0	
+Dorylinae	Larvae	0	
+Ectatomminae	E	0	0
+Ectatomminae	I	0	
+Ectatomminae	Larvae	0	
+Formicinae	E	18.75	100
+Formicinae	I	75	
+Formicinae	Larvae	6.25	
+Myrmicinae	E	56.25	100
+Myrmicinae	I	43.75	
+Myrmicinae	Larvae	0	
+Ponerinae	E	100	100
+Ponerinae	I	0	
+Ponerinae	Larvae	0	
