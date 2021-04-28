@@ -177,6 +177,8 @@ ggplot(data = Raw, aes(x = factor(1), fill = LorF)) +
   scale_fill_manual(values = c("Light Green", "Light Blue")) +
   blank_theme
 
+(LabField[1, "freq"]/sum(LabField$freq))*100
+
 ############################################################################################## Invasive or Not
 
 #Counts
@@ -200,6 +202,8 @@ ggplot(data = Invasive, aes(x = "", y = freq, fill = Invasive)) +
   coord_polar("y", start = 0) +
   scale_fill_manual(values = c("Light Green", "Light Blue", "grey")) +
   blank_theme
+
+(Invasive[3, "freq"]/(sum(Invasive$freq)-Invasive[1, "freq"]))*100
 
 ############################################################################################## Map
 
