@@ -12,12 +12,12 @@ library(ggpubr)
 #Import data 
 Rank <- read.table("Data/Ranking.txt", header = TRUE, sep = "\t")
 SpeciesData <- read.table("Data/SpeciesLevel.txt", header = TRUE, sep = "\t") #NO RANK ADJUSTMENT
-MobType <- read.table("Data/SubFamMobType.txt", header = TRUE, sep = "\t")
-StoType <- read.table("Data/SubFamStoType.txt", header = TRUE, sep = "\t")
-MobCount <- read.table("Data/MobTypeCount.txt", header = TRUE, sep = "\t")
-StoCount <- read.table("Data/StoTypeCount.txt", header = TRUE, sep = "\t")
-AMobType <- read.table("Data/SubFamMobType-ADJUSTED.txt", header = TRUE, sep = "\t")
-AStoType <- read.table("Data/SubFamStoType-ADJUSTED.txt", header = TRUE, sep = "\t")
+MobType <- read.table("Data/MobilityTypes/SubFamMobType.txt", header = TRUE, sep = "\t")
+StoType <- read.table("Data/StorageTypes/SubFamStoType.txt", header = TRUE, sep = "\t")
+MobCount <- read.table("Data/MobilityTypes/MobTypeCount.txt", header = TRUE, sep = "\t")
+StoCount <- read.table("Data/StorageTypes/StoTypeCount.txt", header = TRUE, sep = "\t")
+AMobType <- read.table("Data/MobilityTypes/SubFamMobType-ADJUSTED.txt", header = TRUE, sep = "\t")
+AStoType <- read.table("Data/StorageTypes/SubFamStoType-ADJUSTED.txt", header = TRUE, sep = "\t")
 
 #Blank theme for ggplot
 blank_theme <- theme_minimal() +

@@ -15,9 +15,9 @@ library(MASS)
 #Import data 
 Raw <- read.table("Data/Raw Data.txt", header = TRUE, sep = "\t")
 SpeciesData <- read.table("Data/SpeciesLevel.txt", header = TRUE, sep = "\t")
-TotalSpeciesDataV1 <- read.table("Data/SubfamilySpeciesV1.txt", header = TRUE, sep = "\t")
-TotalSpeciesDataV2 <- read.table("Data/SubfamilySpeciesV2.txt", header = TRUE, sep = "\t")
-TotalSpeciesDataV3 <- read.table("Data/SubfamilySpeciesV3.txt", header = TRUE, sep = "\t")
+TotalSpeciesDataV1 <- read.table("Data/SubfamilySpecies/SubfamilySpeciesV1.txt", header = TRUE, sep = "\t")
+TotalSpeciesDataV2 <- read.table("Data/SubfamilySpecies/SubfamilySpeciesV2.txt", header = TRUE, sep = "\t")
+TotalSpeciesDataV3 <- read.table("Data/SubfamilySpecies/SubfamilySpeciesV3.txt", header = TRUE, sep = "\t")
 Locations <- read.table("Data/Locations.txt", header = TRUE, sep = "\t")
 
 #Blank theme for ggplot
