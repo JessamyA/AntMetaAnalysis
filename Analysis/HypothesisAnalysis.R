@@ -228,6 +228,10 @@ ggplot(AStoType, aes(x = Subfamily, y = X., fill = Type)) +
 
 #geom_text(aes(label = Count), position = position_dodge(width = .9), vjust = 1.6, color = "black", size = 3.5)
 
+StoTypeAnalysis <- read.delim("Data/StorageTypes/StoTypeTable.txt", header = TRUE, row.names = 1, sep = "\t")
+TABStoTypeAnalysis <- as.table(as.matrix(StoTypeAnalysis))
+fisher.test(StoTypeAnalysis)
+
 #MOBILITY
 #Normal
 ggplot(MobType, aes(x = Subfamily, y = Count, fill = Type)) +
@@ -292,6 +296,10 @@ ggplot(AMobType, aes(x = Subfamily, y = X., fill = Type)) +
 
 # geom_text(aes(label = Count), position = position_dodge(width = .9), vjust = 1.6, color = "black", size = 3.5)
 
+MobTypeAnalysis <- read.delim("Data/MobilityTypes/MobTypeTable.txt", header = TRUE, row.names = 1, sep = "\t")
+TABMobTypeAnalysis <- as.table(as.matrix(MobTypeAnalysis))
+fisher.test(MobTypeAnalysis, simulate.p.value = TRUE)
+
 ############################################################################################## Phylogenetic Tree
 
 #All subfamilies
@@ -306,7 +314,7 @@ plot(SubfamTreeSMALL)
 
 #BALLOON PLOTS
 #No Adjustments
-FisherNOAdj <- read.delim("Data/FishersNo.txt", header = TRUE, row.names = 1, sep = "\t")
+FisherNOAdj <- read.delim("Data/Cooccurance/FishersNo.txt", header = TRUE, row.names = 1, sep = "\t")
 TABFisherNOAdj <- as.table(as.matrix(FisherNOAdj))
 
 balloonplot(t(TABFisherNOAdj),
@@ -321,7 +329,7 @@ balloonplot(t(TABFisherNOAdj),
             dotcolor = "Violet")
 
 #Including High
-FisherAdjH <- read.delim("Data/Fishers+H.txt", header = TRUE, row.names = 1, sep = "\t")
+FisherAdjH <- read.delim("Data/Cooccurance/Fishers+H.txt", header = TRUE, row.names = 1, sep = "\t")
 TABFisherAdjH <- as.table(as.matrix(FisherAdjH))
 
 balloonplot(t(TABFisherAdjH), main = "H",
@@ -335,7 +343,7 @@ balloonplot(t(TABFisherAdjH), main = "H",
             dotcolor = "Violet")
 
 #Including High & Medium
-FisherAdjHM <- read.delim("Data/Fishers+H+M.txt", header = TRUE, row.names = 1, sep = "\t")
+FisherAdjHM <- read.delim("Data/Cooccurance/Fishers+H+M.txt", header = TRUE, row.names = 1, sep = "\t")
 TABFisherAdjHM <- as.table(as.matrix(FisherAdjHM))
 
 balloonplot(t(TABFisherAdjHM), main = "H+M",
