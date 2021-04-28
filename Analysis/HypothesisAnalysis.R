@@ -189,7 +189,7 @@ ggplot(StoType, aes(x = Subfamily, y = Count, fill = Type)) +
                               "Ectatomminae"))
 
 #Adjusted v1
-ggplot(AStoType, aes(x = Subfamily, y = Count, fill = Type)) +
+ggplot(AStoType, aes(x = Subfamily, y = X., fill = Type)) +
   geom_bar(stat = "identity", position = position_dodge(), color = "black") +
   theme(panel.grid.major = element_blank(),
         panel.grid.minor = element_blank(),
@@ -208,7 +208,7 @@ ggplot(AStoType, aes(x = Subfamily, y = Count, fill = Type)) +
                               "Ectatomminae"))
 
 #Adjusted v2
-ggplot(AStoType, aes(x = Subfamily, y = Count, fill = Type)) +
+ggplot(AStoType, aes(x = Subfamily, y = X., fill = Type)) +
   geom_bar(stat = "identity", color = "black") +
   theme(panel.grid.major = element_blank(),
         panel.grid.minor = element_blank(),
@@ -251,7 +251,7 @@ ggplot(MobType, aes(x = Subfamily, y = Count, fill = Type)) +
                               "Ectatomminae"))
 
 #Adjusted v1
-ggplot(AMobType, aes(x = Subfamily, y = Count, fill = Type)) +
+ggplot(AMobType, aes(x = Subfamily, y = X., fill = Type)) +
   geom_bar(stat = "identity", position = position_dodge(), color = "black") +
   theme(panel.grid.major = element_blank(),
         panel.grid.minor = element_blank(),
@@ -271,7 +271,7 @@ ggplot(AMobType, aes(x = Subfamily, y = Count, fill = Type)) +
                               "Ectatomminae"))
 
 #Adjusted v2
-ggplot(AMobType, aes(x = Subfamily, y = Count, fill = Type)) +
+ggplot(AMobType, aes(x = Subfamily, y = X., fill = Type)) +
   geom_bar(stat = "identity", color = "black") +
   theme(panel.grid.major = element_blank(),
         panel.grid.minor = element_blank(),
