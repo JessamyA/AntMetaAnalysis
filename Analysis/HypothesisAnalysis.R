@@ -9,6 +9,7 @@ library(ape)
 library(gplots)
 library(ggpubr)
 library(rcompanion)
+library(directlabels)
 
 #Import data 
 Rank <- read.table("Data/Ranking.txt", header = TRUE, sep = "\t")
@@ -540,6 +541,12 @@ ggplot(PearsonNOAdj, aes(x = Storage, y = Mobility)) +
         panel.border = element_rect(colour = "black",
                                     fill = NA,))
 
+ggscatter(PearsonNOAdj, x = "Storage", y = "Mobility", 
+          add = "reg.line", conf.int = TRUE, 
+          cor.coef = TRUE, cor.method = "pearson",
+          xlab = "Storage", ylab = "Mobility")
+shapiro.test(PearsonNOAdj$Storage)
+shapiro.test(PearsonNOAdj$Mobility)
 cor.test(PearsonNOAdj$Storage, PearsonNOAdj$Mobility, method = "pearson")
 
 #+H
@@ -554,6 +561,12 @@ ggplot(PearsonAdjH, aes(x = Storage, y = Mobility)) +
         panel.border = element_rect(colour = "black",
                                     fill = NA,))
 
+ggscatter(PearsonAdjH, x = "Storage", y = "Mobility", 
+          add = "reg.line", conf.int = TRUE, 
+          cor.coef = TRUE, cor.method = "pearson",
+          xlab = "Storage", ylab = "Mobility")
+shapiro.test(PearsonAdjH$Storage)
+shapiro.test(PearsonAdjH$Mobility)
 cor.test(PearsonAdjH$Storage, PearsonAdjH$Mobility, method = "pearson")
 
 #+H+M
@@ -568,9 +581,33 @@ ggplot(PearsonAdjHM, aes(x = Storage, y = Mobility)) +
         panel.border = element_rect(colour = "black",
                                     fill = NA,))
 
+ggscatter(PearsonAdjHM, x = "Storage", y = "Mobility", 
+          add = "reg.line", conf.int = TRUE, 
+          cor.coef = TRUE, cor.method = "pearson",
+          xlab = "Storage", ylab = "Mobility")
+shapiro.test(PearsonAdjHM$Storage)
+shapiro.test(PearsonAdjHM$Mobility)
 cor.test(PearsonAdjHM$Storage, PearsonAdjHM$Mobility, method = "pearson")
 
+#Combined Scatter plot
+Predicted <- data.frame(Storage = c(1,0),
+                        Mobility = c(0,1))
 
+ggplot(PearsonNOAdj, aes(x = Storage, y = Mobility)) +
+  geom_point(color = "white") +
+  geom_smooth(method = lm, se = FALSE, color = "Blue") +
+  geom_text(aes(x = 1.05, y = 0.96, label = "NOAdj"), color = "Blue") +
+  geom_smooth(data = PearsonAdjH, method = lm, se = FALSE, color = "Green") +
+  geom_text(aes(x = 1.03, y = 0.52, label = "+H"), color = "Green") + 
+  geom_smooth(data = PearsonAdjHM, method = lm, se = FALSE, color = "Red") +
+  geom_text(aes(x = 1.05, y = 0.44, label = "+H +M"), color = "Red") + 
+  geom_smooth(data = Predicted, method = lm, se = FALSE, color = "Black") + 
+  geom_text(aes(x = 1.07, y = 0, label = "Predicted"), color = "Black") + 
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        panel.border = element_rect(colour = "black",
+                                    fill = NA,))
 
 
 
