@@ -487,6 +487,108 @@ pairwiseNominalIndependence(TTABAdjHM,
 
 
 
+ggplot(StoType, aes(x = Subfamily, y = Count)) +
+  geom_bar(stat = "identity", color = "black") +
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        panel.border = element_rect(colour = "black",
+                                    fill = NA,)) +
+  scale_x_discrete(limits = c("Amblyoponinae",
+                              "Ponerinae",
+                              "Dorylinae",
+                              "Dolichoderinae",
+                              "Formicinae",
+                              "Myrmicinae",
+                              "Ectatomminae"))
+
+
+ggplot(MobType, aes(x = Subfamily, y = Count)) +
+  geom_bar(stat = "identity", color = "black") +
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        panel.border = element_rect(colour = "black",
+                                    fill = NA,)) +
+  scale_x_discrete(limits = c("Amblyoponinae",
+                              "Ponerinae",
+                              "Dorylinae",
+                              "Dolichoderinae",
+                              "Formicinae",
+                              "Myrmicinae",
+                              "Ectatomminae"))
+
+
+
+
+
+
+
+
+
+
+#PEARSONS TESTS
+#No Adjustments
+PearsonNOAdj <- read.table("Data/Cooccurance/PearsonsNO.txt", header = TRUE, sep = "\t")
+
+ggplot(PearsonNOAdj, aes(x = Storage, y = Mobility)) +
+  geom_point(color = "white") +
+  geom_smooth(method=lm, se=FALSE) +
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        panel.border = element_rect(colour = "black",
+                                    fill = NA,))
+
+cor.test(PearsonNOAdj$Storage, PearsonNOAdj$Mobility, method = "pearson")
+
+#+H
+PearsonAdjH <- read.table("Data/Cooccurance/Pearsons+H.txt", header = TRUE, sep = "\t")
+
+ggplot(PearsonAdjH, aes(x = Storage, y = Mobility)) +
+  geom_point(color = "white") +
+  geom_smooth(method=lm, se=FALSE) +
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        panel.border = element_rect(colour = "black",
+                                    fill = NA,))
+
+cor.test(PearsonAdjH$Storage, PearsonAdjH$Mobility, method = "pearson")
+
+#+H+M
+PearsonAdjHM <- read.table("Data/Cooccurance/Pearsons+H+M.txt", header = TRUE, sep = "\t")
+
+ggplot(PearsonAdjHM, aes(x = Storage, y = Mobility)) +
+  geom_point(color = "white") +
+  geom_smooth(method=lm, se=FALSE) +
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        panel.border = element_rect(colour = "black",
+                                    fill = NA,))
+
+cor.test(PearsonAdjHM$Storage, PearsonAdjHM$Mobility, method = "pearson")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
