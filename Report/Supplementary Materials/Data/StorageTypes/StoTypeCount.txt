@@ -1,0 +1,4 @@
+Type	Count
+E	17.5
+I	22.5
+Larvae	1

@@ -9,8 +9,39 @@ Files found within supplementary materials folder:
 		  Also shown are the date accessed, the database and key words of the search, and reason for elmination (if appropriate).
 		  Included as excel file for ease of viewing a large quantity of data.
 
-3.
+3. Data - Folder containing 21 data-files for use with the R scipt in plain text format.
+		  This includes the Raw Data.txt file which contains all species level data collected in the meta-analysis from which all other files are derived.
 
-4.
+			Cooccurance
+				Fishers+H.txt
+				Fishers+H+M.txt
+				FishersNO.txt
+				Pearsons+H.txt
+				Pearsons+H+M.txt
+				PearsonsNO.txt
+			MobilityTypes
+				MobTypeCount.txt
+				MobTypeTable.txt
+				SubFamMobType.txt
+				SubFamMobType-ADJUSTED.txt
+			StorageTypes
+				StoTypeCount.txt
+				StoTypeTable.txt
+				SubFamStoType.txt
+				SubFamStoType-ADJUSTED.txt
+			SubfamilySpecies
+				SubfamilySpeciesV1.txt
+				SubfamilySpeciesV2.txt
+				SubfamilySpeciesV3.txt
+			Locations.txt
+			Ranking.txt
+			Raw Data.txt
+			SpeciesLevel.txt
 
-5.
+4. Figure S2 - Histogram from which the statistically inferred negative results are derived.
+
+5. BiasAnalysis.R - R script for the analysis of bias within the study.
+		  Contains statistical analyses and graphical exploration of subfamily distribution, lab vs. field, invasive vs. non-invasive, and geographic data.
+
+6. HypothesisAnalysis.R - R script for the analysis of the hypotheses of the study.
+		  Contains statistical analyses and graphical exploration of co-occurance of storage/mobility, storage and mobility types over subfamilies, consensus tree.

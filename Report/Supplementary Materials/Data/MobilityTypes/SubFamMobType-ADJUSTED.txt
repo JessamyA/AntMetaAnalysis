@@ -1,0 +1,29 @@
+Subfamily	Type	%	
+Amblyoponinae	A	50	100
+Amblyoponinae	I	0	
+Amblyoponinae	N	50	
+Amblyoponinae	U	0	
+Dolichoderinae	A	50	100
+Dolichoderinae	I	50	
+Dolichoderinae	N	0	
+Dolichoderinae	U	0	
+Dorylinae	A	0	100
+Dorylinae	I	0	
+Dorylinae	N	100	
+Dorylinae	U	0	
+Ectatomminae	A	33.33333333	100
+Ectatomminae	I	66.66666667	
+Ectatomminae	N	0	
+Ectatomminae	U	0	
+Formicinae	A	25	100
+Formicinae	I	60	
+Formicinae	N	5	
+Formicinae	U	10	
+Myrmicinae	A	47.61904762	100
+Myrmicinae	I	47.61904762	
+Myrmicinae	N	0	
+Myrmicinae	U	4.761904762	
+Ponerinae	A	57.14285714	100
+Ponerinae	I	28.57142857	
+Ponerinae	N	14.28571429	
+Ponerinae	U	0	

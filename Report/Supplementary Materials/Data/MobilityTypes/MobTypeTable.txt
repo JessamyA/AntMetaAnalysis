@@ -1,0 +1,8 @@
+	A	I	N	U
+Amblyoponinae	50	0	50	0
+Dolichoderinae	50	50	0	0
+Dorylinae	0	0	100	0
+Ectatomminae	33.33333333	66.66666667	0	0
+Formicinae	25	60	5	10
+Myrmicinae	47.61904762	47.61904762	0	4.761904762
+Ponerinae	57.14285714	28.57142857	14.28571429	0

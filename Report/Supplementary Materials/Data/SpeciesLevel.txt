@@ -1,0 +1,109 @@
+spID	SpeciesID	Subfamily	Genus	Species	StorageYN	StorageType	Resource	MobilityYN	MobilityType
+14PODIIN	PODIIN	Ponerinae	Diacamma	indicum	NA	NA	NA	NA	NA
+06MYSOIN	MYSOIN	Myrmicinae	Solenopsis	invicta	NA	NA	NA	NA	NA
+01FOFOPO01	FOFOPO01	Formicinae	Formica	polyctena	NA	NA	NA	Y	A
+01PONEVI	PONEVI	Ponerinae	Neoponera	villosa	NA	NA	NA	Y	A
+01MYAPIB	MYAPIB	Myrmicinae	Aphaenogaster	iberica	NA	NA	NA	Y	I
+01MYPOSA	MYPOSA	Myrmicinae	Pogonomyrmex	salinus	NA	NA	NA	Y	A
+01FOCAJA	FOCAJA	Formicinae	Camponotus	japonicus	NA	NA	NA	Y	U
+07MYPOBA01	MYPOBA01	Myrmicinae	Pogonomyrmex	badius	Y	E	Seeds	Y	I
+01MYTECR	MYTECR	Myrmicinae	Temnothorax	crassispinus	NA	NA	NA	Y	U
+03MYVEAN	MYVEAN	Myrmicinae	Veromessor	andrei	NA	NA	NA	Y	I
+04MYTECU	MYTECU	Myrmicinae	Temnothorax	curvispinosus	NA	NA	NA	Y	A
+01MYTELO	MYTELO	Myrmicinae	Temnothorax	longispinosus	NA	NA	NA	Y	A
+01FOFOSU01	FOFOSU01	Formicinae	Formica	subintegra	NA	NA	NA	Y	I
+01FOFOPE	FOFOPE	Formicinae	Formica	pergandei	NA	NA	NA	Y	I
+04DOLIHU	DOLIHU	Dolichoderinae	Linepithema	humile	NA	NA	NA	Y	NA
+01FOPHDE	FOPHDE	Formicinae	Pheidole	dentata	NA	NA	NA	Y	I
+02MYPOBA02	MYPOBA02	Myrmicinae	Pogonomyrmex	barbatus	NA	NA	NA	Y	I
+03MYMYNI	MYMYNI	Myrmicinae	Myrmecina	nipponica	NA	NA	NA	Y	NA
+02AMMYOB	AMMYOB	Amblyoponinae	Mystrium	oberthueri	NA	NA	NA	Y	A
+06MYATSE	MYATSE	Myrmicinae	Atta	sexdens	NA	NA	NA	NA	NA
+02MYACHE	MYACHE	Myrmicinae	Acromyrmex	heyeri	Y	E	Farmed Fungus	Y	A
+02MYAPSE	MYAPSE	Myrmicinae	Aphaenogaster	senilis	NA	NA	NA	Y	NA
+01MYTENY	MYTENY	Myrmicinae	Temnothorax	nylanderi	NA	NA	NA	N	NA
+11DOECBU	DOECBU	Dorylinae	Eciton	burchellii	NA	NA	NA	Y	N
+03DODONI01	DODONI01	Dorylinae	Dorylus	nigricans molestus	NA	NA	NA	Y	N
+04MYAPAR	MYAPAR	Myrmicinae	Aphaenogaster	araneoides	NA	NA	NA	Y	I
+06MYMOPH	MYMOPH	Myrmicinae	Monomorium	pharaonis	Y	NA	NA	Y	A
+01ECECRU	ECECRU	Ectatomminae	Ectatomma	ruidum	NA	NA	NA	Y	I
+01FOCAPE	FOCAPE	Formicinae	Camponotus	pennsylvanicus	NA	NA	NA	Y	I
+02DOTASE	DOTASE	Dolichoderinae	Tapinoma	sessile	NA	NA	NA	Y	NA
+02AMONHE	AMONHE	Amblyoponinae	Onychomyrmex	hedleyi	NA	NA	NA	Y	N
+02FOCAIB	FOCAIB	Formicinae	Cataglyphis	iberica	NA	NA	NA	Y	I
+01MYMYPU	MYMYPU	Myrmicinae	Myrmica	punctiventris	NA	NA	NA	Y	I
+01PONEOB	PONEOB	Ponerinae	Neoponera	obscuricornis	NA	NA	NA	Y	A
+15MYTEAL	MYTEAL	Myrmicinae	Temnothorax	albipennis	Y	I	Fat/Lipid/Honey Solution and Drosophila	Y	NA
+01FOCABI	FOCABI	Formicinae	Cataglyphis	bicolor	NA	NA	NA	N	NA
+01FOCAFO	FOCAFO	Formicinae	Cataglyphis	fortis	NA	NA	NA	Y	U
+01FOPOAM	FOPOAM	Formicinae	Polyrhachis	ammon	NA	NA	NA	Y	I
+01FOPOLO	FOPOLO	Formicinae	Polyrhachis	loweryi	NA	NA	NA	Y	A
+01ECRHME	ECRHME	Ectatomminae	Rhytidoponera	metallica	NA	NA	NA	Y	I
+01ECECOP	ECECOP	Ectatomminae	Ectatomma	opaciventre	NA	NA	NA	Y	A
+01FOPRLO	FOPRLO	Formicinae	Proformica	longiseta	NA	NA	NA	Y	NA
+02MYPRPU	MYPRPU	Myrmicinae	Pristomyrmex	punctatus	NA	NA	NA	Y	NA
+01MYAPRU	MYAPRU	Myrmicinae	Aphaenogaster	rudis	NA	NA	NA	Y	I
+01FOFOSU02	FOFOSU02	Formicinae	Formica	subsericea	NA	NA	NA	Y	I
+01FOFOPA	FOFOPA	Formicinae	Formica	pallidefulva	NA	NA	NA	Y	I
+01FOFODI	FOFODI	Formicinae	Formica	difficilis	NA	NA	NA	Y	I
+05DONENI	DONENI	Dorylinae	Neivamyrmex	nigrescens	NA	NA	NA	Y	N
+06DOECHA	DOECHA	Dorylinae	Eciton	hamatum	NA	NA	NA	Y	N
+01POPLMO	POPLMO	Ponerinae	Platythyrea	modesta	N	NA	Grasshopper	Y	I
+01DOLENO	DOLENO	Dorylinae	Leptanilloides	nomadus	NA	NA	NA	Y	N
+01DOLENU	DOLENU	Dorylinae	Leptanilloides	nubecula	NA	NA	NA	Y	N
+02DOECDU	DOECDU	Dorylinae	Eciton	dulcium	NA	NA	NA	Y	N
+02DOECME	DOECME	Dorylinae	Eciton	mexicanum	NA	NA	NA	Y	N
+02DOECVA	DOECVA	Dorylinae	Eciton	vagans	NA	NA	NA	Y	N
+01FOEUPR	FOEUPR	Formicinae	Euprenolepis	procera	Y	E	Mushrooms - fermented over a week	Y	N
+01DODONI02	DODONI02	Dorylinae	Dorylus	nigricans rubellus	NA	NA	NA	Y	N
+01MYMYGR	MYMYGR	Myrmicinae	Myrmecina	graminicola	NA	NA	NA	Y	A
+01MYPHFA	MYPHFA	Myrmicinae	Pheidole	fallax	Y	E	Seeds	NA	NA
+03MYACLU	MYACLU	Myrmicinae	Acromyrmex	lundi	Y	E	Farmed Fungus	NA	NA
+01POLEMA	POLEMA	Ponerinae	Leptogenys	maxillosa	NA	NA	NA	Y	I
+01MYPHDE	MYPHDE	Myrmicinae	Pheidole	deima	Y	I	Liquid Food	NA	NA
+01MYPHAB	MYPHAB	Myrmicinae	Pheidole	aberrans	Y	I	Liquid Food	NA	NA
+01FOFORU	FOFORU	Formicinae	Formica	rufa	Y	E	Seeds	NA	NA
+02FOCASA	FOCASA	Formicinae	Camponotus	sanctus	Y	I	Liquid Food	NA	NA
+01MYACEC	MYACEC	Myrmicinae	Acromyrmex	echinatior	Y	I	Liquid Food	NA	NA
+01MYACOC	MYACOC	Myrmicinae	Acromyrmex	octospinosus	Y	I	Liquid Food	NA	NA
+01MYATCO	MYATCO	Myrmicinae	Atta	colombica	Y	I	Liquid Food	NA	NA
+01FOOESM	FOOESM	Formicinae	Oecophylla	smaragdina	NA	NA	NA	Y	I
+01FOCACU	FOCACU	Formicinae	Cataglyphis	cursor	Y	I	Cockroaches and Sugar Water	NA	NA
+01MYTRZE	MYTRZE	Myrmicinae	Trachymyrmex	zeteki	Y	E	Farmed Fungus	NA	NA
+01MYPONA	MYPONA	Myrmicinae	Pogonomyrmex	naegelii	Y	E	Seeds	NA	NA
+01MYCETO	MYCETO	Myrmicinae	Crematogaster	torosa	Y	E	Dried Insect	NA	NA
+03FOFOFU	FOFOFU	Formicinae	Formica	fusca	Y	I	Liquid Food/Sucrose Solution	Y	I
+02FOCARU	FOCARU	Formicinae	Camponotus	rufipes	Y	I	Nectar	NA	NA
+01MYPHMO	MYPHMO	Myrmicinae	Pheidole	morrisi	Y	I	Fat	NA	NA
+01MYMEBA	MYMEBA	Myrmicinae	Messor	barbarus	Y	E	Seeds	NA	NA
+01MYMEAC	MYMEAC	Myrmicinae	Messor	aciculatus	Y	E	Seeds	NA	NA
+02FOFOPO02	FOFOPO02	Formicinae	Formica	podzolica	N	NA	NA	N	NA
+01FOCONI	FOCONI	Formicinae	Colobopsis	nipponicus	Y	I	Fat	NA	NA
+01FOCAFL	FOCAFL	Formicinae	Camponotus	floridanus	Y	Larvae	NA	NA	NA
+01FOPRNI	FOPRNI	Formicinae	Prenolepis	nitens	Y	I	Fat	NA	NA
+02FOMYME01	FOMYME01	Formicinae	Myrmecocystus	mendax	Y	I	Liquid Food	NA	NA
+03FOMYME02	FOMYME02	Formicinae	Myrmecocystus	mexicanus	NA	NA	NA	NA	NA
+01MYACCR	MYACCR	Myrmicinae	Acromyrmex	crassispinus	Y	E	Farmed Fungus	NA	NA
+01POBRCH	POBRCH	Ponerinae	Brachyponera	chinensis	NA	NA	NA	Y	A
+01FOFOLU	FOFOLU	Formicinae	Formica	lugubris	Y	I	Honeydew	NA	NA
+01MYPOMA	MYPOMA	Myrmicinae	Pogonomyrmex	mayri	N	NA	NA	Y	I
+01FOPOLU	FOPOLU	Formicinae	Polyergus	lucidus	NA	NA	NA	Y	I
+01FOFOCA	FOFOCA	Formicinae	Formica	canadensis	Y	E	Seeds	NA	NA
+01MYMYDI	MYMYDI	Myrmicinae	Myrmica	discontinua	Y	E	Seeds	NA	NA
+01FOCADE	FOCADE	Formicinae	Camponotus	detritus	N	NA	NA	Y	A
+01POLEPR	POLEPR	Ponerinae	Leptogenys	processionalis	NA	NA	NA	Y	N
+01FOMEBA	FOMEBA	Formicinae	Melophorus	bagoti	Y	I	Liquid Food	Y	A
+01MYCAUR	MYCAUR	Myrmicinae	Carebara	urichi	Y	I	Liquid Food	Y	A
+01MYPHRY	MYPHRY	Myrmicinae	Pheidole	ryukyuensis	Y	I	Liquid Food	NA	NA
+01FOPRIM	FOPRIM	Formicinae	Prenolepis	imparis	Y	I	Fat	NA	NA
+01FOLAFL	FOLAFL	Formicinae	Lasius	flavus	Y	I	Liquid Food	NA	NA
+01MYMYIN	MYMYIN	Myrmicinae	Mycetagroicus	inflatus	Y	E	Farmed Fungus	NA	NA
+01POODHA	POODHA	Ponerinae	Odontomachus	hastatus	Y	E	Pellets	NA	NA
+01DOECLU	DOECLU	Dorylinae	Eciton	lucanoides	NA	NA	NA	Y	N
+01DOECRA	DOECRA	Dorylinae	Eciton	rapax	NA	NA	NA	Y	N
+01DOLACO	DOLACO	Dorylinae	Labidus	coecus	NA	NA	NA	Y	N
+01DOLAPR	DOLAPR	Dorylinae	Labidus	praedator	NA	NA	NA	Y	N
+01DONECR	DONECR	Dorylinae	Neivamyrmex	cristatus	NA	NA	NA	Y	N
+01DONEGI	DONEGI	Dorylinae	Neivamyrmex	gibbatus	NA	NA	NA	Y	N
+01DONOES	DONOES	Dorylinae	Nomamyrmex	esenbeckii	NA	NA	NA	Y	N
+01DONOHA	DONOHA	Dorylinae	Nomamyrmex	hartigii	NA	NA	NA	Y	N
