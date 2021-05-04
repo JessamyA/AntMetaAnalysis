@@ -50,7 +50,8 @@ ggplot(Rank, aes(x = AveResults)) +
   theme(panel.grid.major = element_blank(),
         panel.grid.minor = element_blank(),
         panel.background = element_blank(),
-        panel.border = element_rect(colour = "black", fill = NA))
+        panel.border = element_rect(colour = "black", fill = NA)) +
+  labs(x = "Mean Search Results", y = "Density")
 
 # Zoomed in 
 ggplot(Rank, aes(x = AveResults)) +
