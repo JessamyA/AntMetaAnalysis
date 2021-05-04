@@ -1,3 +1,5 @@
+#WARNING: Working directory and file-paths will need to be changed if replicated from the sup materials
+
 #Set Working Directory
 setwd("C:/Users/jessa/Documents/AntMetaAnalysis")
 
@@ -244,10 +246,10 @@ MapOcean2 <- fortify(MapOcean)
 
 ggplot(Locations, aes(x = Longitude, y = Latitude)) +
   stat_density2d(aes(fill = ..level..), alpha = 0.5, geom = "polygon") +
-  geom_point(colour="red") +
+  geom_point(colour="black") +
   geom_path(data = MapCoastline2, aes(x = long, y = lat, group = group), color = "grey50") +
   geom_path(data = MapLandBoundaries2, aes(x = long, y = lat, group = group), color = "grey50") +
-  scale_fill_gradientn(colours = rev(brewer.pal(7,"Spectral"))) +
+  scale_fill_gradientn(colours = rev(brewer.pal(11,"RdYlBu"))) +
   coord_fixed() + 
   xlim(-180, 180) +
   ylim(-90, 90) +

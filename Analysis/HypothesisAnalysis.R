@@ -1,3 +1,5 @@
+#WARNING: Working directory and file-paths will need to be changed if replicated from the sup materials
+
 #Set Working Directory
 setwd("C:/Users/jessa/Documents/AntMetaAnalysis")
 
@@ -59,7 +61,8 @@ ggplot(Rank, aes(x = AveResults)) +
         panel.grid.minor = element_blank(),
         panel.background = element_blank(),
         panel.border = element_rect(colour = "black", fill = NA)) +
-  xlim(0, 250)
+  labs(x = "Mean Search Results", y = "Density") +
+  xlim(0, 200)
 
 ############################################################################################## Subfamily data Occurrence
 str(SpeciesData)
@@ -179,9 +182,10 @@ ggplot(StoType, aes(x = Subfamily, y = Count, fill = Type)) +
         panel.background = element_blank(),
         panel.border = element_rect(colour = "black",
                                     fill = NA,)) +
-  scale_fill_manual(values = c("pink",
-                               "light blue",
-                               "light green")) +
+  scale_fill_manual(values = c("#ff6b6b",
+                               "#ffff6b",
+                               "#6b6eff",
+                               "#cc6bff")) +
   scale_x_discrete(limits = c("Amblyoponinae",
                               "Ponerinae",
                               "Dorylinae",
@@ -198,16 +202,20 @@ ggplot(AStoType, aes(x = Subfamily, y = X., fill = Type)) +
         panel.background = element_blank(),
         panel.border = element_rect(colour = "black",
                                     fill = NA,)) +
-  scale_fill_manual(values = c("pink",
-                               "light blue",
-                               "light green")) +
+  scale_fill_manual(values = c("#ff6b6b",
+                               "#ffff6b",
+                               "#6b6eff",
+                               "#cc6bff"),
+                    name = "Storage Type",
+                    labels = c("External", "Internal", "Larval")) +
   scale_x_discrete(limits = c("Amblyoponinae",
                               "Ponerinae",
                               "Dorylinae",
                               "Dolichoderinae",
                               "Formicinae",
                               "Myrmicinae",
-                              "Ectatomminae"))
+                              "Ectatomminae")) +
+  labs(y = "Percentage")
 
 #Adjusted v2
 ggplot(AStoType, aes(x = Subfamily, y = X., fill = Type)) +
@@ -217,9 +225,12 @@ ggplot(AStoType, aes(x = Subfamily, y = X., fill = Type)) +
         panel.background = element_blank(),
         panel.border = element_rect(colour = "black",
                                     fill = NA,)) +
-  scale_fill_manual(values = c("pink",
-                               "light blue",
-                               "light green")) +
+  scale_fill_manual(values = c("#ff6b6b",
+                               "#ffff6b",
+                               "#6b6eff",
+                               "#cc6bff"),
+                    name = "Storage Type",
+                    labels = c("External", "Internal", "Larval")) +
   scale_x_discrete(limits = c("Amblyoponinae",
                               "Ponerinae",
                               "Dorylinae",
@@ -267,10 +278,10 @@ ggplot(MobType, aes(x = Subfamily, y = Count, fill = Type)) +
         panel.background = element_blank(),
         panel.border = element_rect(colour = "black",
                                     fill = NA,)) +
-  scale_fill_manual(values = c("pink",
-                               "light green",
-                               "light blue",
-                               "violet")) +
+  scale_fill_manual(values = c("#ff6b6b",
+                               "#ffff6b",
+                               "#6b6eff",
+                               "#cc6bff")) +
   scale_x_discrete(limits = c("Amblyoponinae",
                               "Ponerinae",
                               "Dorylinae",
@@ -287,17 +298,20 @@ ggplot(AMobType, aes(x = Subfamily, y = X., fill = Type)) +
         panel.background = element_blank(),
         panel.border = element_rect(colour = "black",
                                     fill = NA,)) +
-  scale_fill_manual(values = c("pink",
-                               "light green",
-                               "light blue",
-                               "violet")) +
+  scale_fill_manual(values = c("#ff6b6b",
+                               "#ffff6b",
+                               "#6b6eff",
+                               "#cc6bff"),
+                    name = "Storage Type",
+                    labels = c("Adventitious", "Intrinsic Relocators", "Nomadism", "Unstable Nesters")) +
   scale_x_discrete(limits = c("Amblyoponinae",
                               "Ponerinae",
                               "Dorylinae",
                               "Dolichoderinae",
                               "Formicinae",
                               "Myrmicinae",
-                              "Ectatomminae"))
+                              "Ectatomminae")) +
+  labs(y = "Percentage")
 
 #Adjusted v2
 ggplot(AMobType, aes(x = Subfamily, y = X., fill = Type)) +
@@ -307,10 +321,10 @@ ggplot(AMobType, aes(x = Subfamily, y = X., fill = Type)) +
         panel.background = element_blank(),
         panel.border = element_rect(colour = "black",
                                     fill = NA,)) +
-  scale_fill_manual(values = c("pink",
-                               "light green",
-                               "light blue",
-                               "violet")) +
+  scale_fill_manual(values = c("#ff6b6b",
+                               "#ffff6b",
+                               "#6b6eff",
+                               "#cc6bff")) +
   scale_x_discrete(limits = c("Amblyoponinae",
                               "Ponerinae",
                               "Dorylinae",
@@ -388,43 +402,43 @@ FisherNOAdj <- read.delim("Data/Cooccurance/FishersNo.txt", header = TRUE, row.n
 TABFisherNOAdj <- as.table(as.matrix(FisherNOAdj))
 
 balloonplot(t(TABFisherNOAdj),
-            main = "No Adj",
-            xlab = "Storage",
-            ylab = "Mobility",
+            main = "Real Data",
+            xlab = "Mobility",
+            ylab = "Storage",
             rowmar = .75,
             colmar = .75,
             label = TRUE,
             show.margins = FALSE,
             cum.margins = FALSE,
-            dotcolor = "Violet")
+            dotcolor = "#ff6b6b")
 
 #Including High
 FisherAdjH <- read.delim("Data/Cooccurance/Fishers+H.txt", header = TRUE, row.names = 1, sep = "\t")
 TABFisherAdjH <- as.table(as.matrix(FisherAdjH))
 
-balloonplot(t(TABFisherAdjH), main = "H",
-            xlab = "Storage",
-            ylab = "Mobility",
+balloonplot(t(TABFisherAdjH), main = "Real Data + High-studied",
+            xlab = "Mobility",
+            ylab = "Storage",
             rowmar = .75,
             colmar = .75,
             label = TRUE,
             show.margins = FALSE,
             cum.margins = FALSE,
-            dotcolor = "Violet")
+            dotcolor = "#6b6eff")
 
 #Including High & Medium
 FisherAdjHM <- read.delim("Data/Cooccurance/Fishers+H+M.txt", header = TRUE, row.names = 1, sep = "\t")
 TABFisherAdjHM <- as.table(as.matrix(FisherAdjHM))
 
-balloonplot(t(TABFisherAdjHM), main = "H+M",
-            xlab = "Storage",
-            ylab = "Mobility",
+balloonplot(t(TABFisherAdjHM), main = "Real Data + High-studied + Medium-studied",
+            xlab = "Mobility",
+            ylab = "Storage",
             rowmar = .75,
             colmar = .75,
             label = TRUE,
             show.margins = FALSE,
             cum.margins = FALSE,
-            dotcolor = "Violet")
+            dotcolor = "#cc6bff")
 
 ggballoonplot(TABFisherAdjHM)
 
@@ -482,51 +496,6 @@ pairwiseNominalIndependence(TTABAdjHM,
                             chisq  = FALSE,
                             digits = 3)
 #MobY:MobN    p = 0.00637
-
-
-
-
-
-
-ggplot(StoType, aes(x = Subfamily, y = Count)) +
-  geom_bar(stat = "identity", color = "black") +
-  theme(panel.grid.major = element_blank(),
-        panel.grid.minor = element_blank(),
-        panel.background = element_blank(),
-        panel.border = element_rect(colour = "black",
-                                    fill = NA,)) +
-  scale_x_discrete(limits = c("Amblyoponinae",
-                              "Ponerinae",
-                              "Dorylinae",
-                              "Dolichoderinae",
-                              "Formicinae",
-                              "Myrmicinae",
-                              "Ectatomminae"))
-
-
-ggplot(MobType, aes(x = Subfamily, y = Count)) +
-  geom_bar(stat = "identity", color = "black") +
-  theme(panel.grid.major = element_blank(),
-        panel.grid.minor = element_blank(),
-        panel.background = element_blank(),
-        panel.border = element_rect(colour = "black",
-                                    fill = NA,)) +
-  scale_x_discrete(limits = c("Amblyoponinae",
-                              "Ponerinae",
-                              "Dorylinae",
-                              "Dolichoderinae",
-                              "Formicinae",
-                              "Myrmicinae",
-                              "Ectatomminae"))
-
-
-
-
-
-
-
-
-
 
 #PEARSONS TESTS
 #No Adjustments
@@ -589,29 +558,25 @@ shapiro.test(PearsonAdjHM$Storage)
 shapiro.test(PearsonAdjHM$Mobility)
 cor.test(PearsonAdjHM$Storage, PearsonAdjHM$Mobility, method = "pearson")
 
-#Combined Scatter plot
+#Combined Scatter plot + predicted line
 Predicted <- data.frame(Storage = c(1,0),
                         Mobility = c(0,1))
 
 ggplot(PearsonNOAdj, aes(x = Storage, y = Mobility)) +
   geom_point(color = "white") +
-  geom_smooth(method = lm, se = FALSE, color = "Blue") +
-  geom_text(aes(x = 1.05, y = 0.96, label = "NOAdj"), color = "Blue") +
-  geom_smooth(data = PearsonAdjH, method = lm, se = FALSE, color = "Green") +
-  geom_text(aes(x = 1.03, y = 0.52, label = "+H"), color = "Green") + 
-  geom_smooth(data = PearsonAdjHM, method = lm, se = FALSE, color = "Red") +
-  geom_text(aes(x = 1.05, y = 0.44, label = "+H +M"), color = "Red") + 
+  geom_smooth(method = lm, se = FALSE, color = "#ff6b6b") +
+  geom_text(aes(x = 0.97, y = 1, label = "Real"), color = "#ff6b6b") +
+  geom_smooth(data = PearsonAdjH, method = lm, se = FALSE, color = "#6b6eff") +
+  geom_text(aes(x = 0.95, y = 0.59, label = "Real +H"), color = "#6b6eff") + 
+  geom_smooth(data = PearsonAdjHM, method = lm, se = FALSE, color = "#cc6bff") +
+  geom_text(aes(x = 0.94, y = 0.40, label = "Real +H +M"), color = "#cc6bff") + 
   geom_smooth(data = Predicted, method = lm, se = FALSE, color = "Black") + 
-  geom_text(aes(x = 1.07, y = 0, label = "Predicted"), color = "Black") + 
+  geom_text(aes(x = 0.95, y = 0.16, label = "Predicted"), color = "Black") + 
   theme(panel.grid.major = element_blank(),
         panel.grid.minor = element_blank(),
         panel.background = element_blank(),
         panel.border = element_rect(colour = "black",
                                     fill = NA,))
-
-
-
-
 
 
 

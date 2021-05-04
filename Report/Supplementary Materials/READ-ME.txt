@@ -1,9 +1,13 @@
-Files found within supplementary materials:
+Files found within supplementary materials folder:
 
 
-1. TableS1.xlsx - Table containing a complete breakdown of all searches performed in the meta-analysis. This includes the database, key words, level at which elimination occurred, and total number of relevent papers uncovered in each search. Included as excel file for ease of viewing a large quantity of data.
+1. TableS1.xlsx - Table containing a complete breakdown of all searches performed in the meta-analysis.
+		  This includes the database, key words, level at which elimination occurred, and total number of relevent papers uncovered in each search.
+		  Included as excel file for ease of viewing a large quantity of data.
 
-2. TableS2.xlsx - Table containing references for all papers explored in the meta-analysis. Also shown are the date accessed, the database and key words of the search, and reason for elmination (if appropriate). Included as excel file for ease of viewing a large quantity of data.
+2. TableS2.xlsx - Table containing references for all papers explored in the meta-analysis.
+		  Also shown are the date accessed, the database and key words of the search, and reason for elmination (if appropriate).
+		  Included as excel file for ease of viewing a large quantity of data.
 
 3.
 
